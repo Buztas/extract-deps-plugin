@@ -30,8 +30,11 @@ import java.util.regex.Pattern;
 @Mojo(name="extract-deps", defaultPhase = LifecyclePhase.INITIALIZE)
 public class ExtractDeps extends AbstractMojo {
 
-    @Parameter(property = "directory", required = true, readonly = true)
+    @Parameter(property = "project-directory", required = true, readonly = true)
     private File directory;
+
+    @Parameter(property = "mps-directory", required = true, readonly = true)
+    private File mpsDirectory;
 
     @Parameter(property = "install-dir", required = true, readonly = true)
     private File installDir;
@@ -109,8 +112,9 @@ public class ExtractDeps extends AbstractMojo {
     }
 
     private void checkPluginExistence() throws IOException {
-        File parentDir = directory.getParentFile();
-        if (parentDir == null || !parentDir.exists() || !parentDir.isDirectory()) {
+        File parentDir = new File(mpsDirectory, "/plugins");
+
+        if (!parentDir.exists() || !parentDir.isDirectory()) {
             getLog().warn("Parent plugins directory not found or is not a directory.");
             return;
         }
