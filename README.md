@@ -10,4 +10,4 @@ Parameters:
 - install-dir = Directory of an installed plugin.
 
 This plugin will detect missing plugins/dependencies based on your build.xml or plugin.xml files. But in order for it to add required plugins/dependencies
-You must download/clone the plugin/dependency. This is what the **install-dir** parameter is asking for.
+you must download/clone the plugin/dependency. This is what the **install-dir** parameter is asking for.
