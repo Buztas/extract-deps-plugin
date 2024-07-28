@@ -1,4 +1,4 @@
-package com.justas.deps;
+package mps.sample;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -27,7 +27,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Mojo(name="extract-deps", defaultPhase = LifecyclePhase.INITIALIZE)
+@Mojo(name="mps-deps", defaultPhase = LifecyclePhase.INITIALIZE)
 public class ExtractDeps extends AbstractMojo {
 
     @Parameter(property = "project-directory", required = true, readonly = true)
